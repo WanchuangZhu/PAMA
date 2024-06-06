@@ -1,0 +1,38 @@
+---
+title: "README"
+author: "Wanchuang Zhu"
+date: "15/11/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Description
+
+This package contains codes to implement BARD-Mallows model for rank aggregation. Both Bayesian inference and MLE are provided. It can handle partial list as well. When covariates information is available, this package can make inference by incoporating the covariate information.
+
+## A simple example
+Here is an example to implement rank aggregation using BARDM package.
+```{r cars}
+library(BARDM)
+dat=t(PerMallows::rmm(10,1:30,0.5))
+BARDM.B(dat,10,iter=100)
+```
+
+## Installation 
+It is easy to install BARDM package.
+
+```{r}
+install.packages("BARDM")
+```
+
+## main components of BARDM
+Five functions are available in this package and are introduced as follows.
+
+- ${\it BARDM.B}$ Bayesian inference of rank aggregation for full ranking lists.\
+- ${\it BARDM.F}$ MLE estimation of rank aggregation for full ranking lists.\
+- $BARDM.Cov$ Bayesian inference of rank aggregation for full ranking lists with covariate information.\
+- $BARDM.PL$ Bayesian inference of rank aggregation for ranking lists where partial list is allowed.\
+- $NBANFL$ Data of NBA and NFL.
